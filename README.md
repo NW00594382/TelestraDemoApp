@@ -5,5 +5,5 @@ A demo application for iOS platform.
 
 2) NSURL Session is used to call API
 
-3) App is developer using Swift language.
+3) Swift language is used for development.
 
