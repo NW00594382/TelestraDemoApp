@@ -29,6 +29,9 @@ class ViewController: UITableViewController {
         tableView.backgroundColor = UIColor.themeColor
         self.tableView.tableFooterView = UIView()
         self.navigationController?.navigationBar.barTintColor = UIColor.themeColor
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getAPIData()
     }
     
@@ -36,8 +39,10 @@ class ViewController: UITableViewController {
     //MARK: - Private Methods
     
     func getAPIData() {
+        SKActivityIndicator.show()
         Services.sharedInstance.getAPIData { (data, error) in
             DispatchQueue.main.async {
+                SKActivityIndicator.dismiss()
                 if data != nil {
                     self.navigationItem.title = data?.title
                     self.rowsArray = data!.rows.filter{ $0.title != nil }

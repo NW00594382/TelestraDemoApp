@@ -19,6 +19,8 @@
 		76AE04A82449E0AE004B905F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */; };
 		76AE04AA2449E0AE004B905F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A52449E0AE004B905F /* UIColorExtension.swift */; };
 		76AE04AB2449E0AE004B905F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A62449E0AE004B905F /* UIViewExtension.swift */; };
+		76AE04BB2449E6D0004B905F /* SKActivityIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04B92449E6D0004B905F /* SKActivityIndicatorViewStyle.swift */; };
+		76AE04BC2449E6D0004B905F /* SKActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04BA2449E6D0004B905F /* SKActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		76AE04A52449E0AE004B905F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		76AE04A62449E0AE004B905F /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		76AE04B92449E6D0004B905F /* SKActivityIndicatorViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActivityIndicatorViewStyle.swift; sourceTree = "<group>"; };
+		76AE04BA2449E6D0004B905F /* SKActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		522D6BF42449CF410078738C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				76AE04BA2449E6D0004B905F /* SKActivityIndicatorView.swift */,
+				76AE04B92449E6D0004B905F /* SKActivityIndicatorViewStyle.swift */,
 				76AE04A52449E0AE004B905F /* UIColorExtension.swift */,
 				76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */,
 				76AE04A62449E0AE004B905F /* UIViewExtension.swift */,
@@ -308,6 +314,8 @@
 				522D6BFA2449CF410078738C /* Services.swift in Sources */,
 				522D6BFE2449CF420078738C /* ViewController.swift in Sources */,
 				76AE04AA2449E0AE004B905F /* UIColorExtension.swift in Sources */,
+				76AE04BC2449E6D0004B905F /* SKActivityIndicatorView.swift in Sources */,
+				76AE04BB2449E6D0004B905F /* SKActivityIndicatorViewStyle.swift in Sources */,
 				522D6BFF2449CF420078738C /* CustomCell.swift in Sources */,
 				76AE04A82449E0AE004B905F /* UIImageViewExtension.swift in Sources */,
 				522D6BC32449CE630078738C /* AppDelegate.swift in Sources */,
