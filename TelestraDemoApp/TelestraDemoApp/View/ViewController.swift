@@ -19,7 +19,6 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
@@ -27,6 +26,9 @@ class ViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = UIColor.themeColor
+        self.tableView.tableFooterView = UIView()
+        self.navigationController?.navigationBar.barTintColor = UIColor.themeColor
         getAPIData()
     }
     

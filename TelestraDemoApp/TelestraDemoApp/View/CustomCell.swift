@@ -11,11 +11,11 @@ import UIKit
 class CustomCell: UITableViewCell {
     
     //MARK: - Outlets
-
+    
     private let nameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 18)
+        lbl.textColor = UIColor.titleColor
+        lbl.font = UIFont(name: "Helvetica-bold", size: 18)
         lbl.textAlignment = .left
         return lbl
     }()
@@ -23,7 +23,7 @@ class CustomCell: UITableViewCell {
     private let descriptionLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.font = UIFont(name: "Helvetica", size: 15)
         lbl.textAlignment = .left
         lbl.lineBreakMode = NSLineBreakMode.byTruncatingTail
         lbl.numberOfLines = 0
@@ -41,11 +41,11 @@ class CustomCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        contentView.backgroundColor = UIColor.themeColor
         addSubview(nameLabel)
         addSubview(descriptionLabel)
         addSubview(nameImageView)
-        
+
         nameImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 90, height: 90, enableInsets: false)
         nameLabel.anchor(top: topAnchor, left: nameImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: frame.size.width, height: 0, enableInsets: false)
         descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
@@ -64,3 +64,4 @@ class CustomCell: UITableViewCell {
         descriptionLabel.text = row.description
     }
 }
+

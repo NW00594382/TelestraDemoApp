@@ -14,10 +14,11 @@
 		522D6BE32449CE6C0078738C /* TelestraDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BE22449CE6C0078738C /* TelestraDemoAppUITests.swift */; };
 		522D6BFA2449CF410078738C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF12449CF410078738C /* Services.swift */; };
 		522D6BFB2449CF420078738C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF32449CF410078738C /* DataModel.swift */; };
-		522D6BFC2449CF420078738C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF52449CF410078738C /* Extension.swift */; };
-		522D6BFD2449CF420078738C /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF62449CF410078738C /* ImageViewExtension.swift */; };
 		522D6BFE2449CF420078738C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF82449CF410078738C /* ViewController.swift */; };
 		522D6BFF2449CF420078738C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D6BF92449CF410078738C /* CustomCell.swift */; };
+		76AE04A82449E0AE004B905F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */; };
+		76AE04AA2449E0AE004B905F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A52449E0AE004B905F /* UIColorExtension.swift */; };
+		76AE04AB2449E0AE004B905F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04A62449E0AE004B905F /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		522D6BE42449CE6C0078738C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522D6BF12449CF410078738C /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		522D6BF32449CF410078738C /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		522D6BF52449CF410078738C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		522D6BF62449CF410078738C /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		522D6BF82449CF410078738C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		522D6BF92449CF410078738C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		76AE04A52449E0AE004B905F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		76AE04A62449E0AE004B905F /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +156,9 @@
 		522D6BF42449CF410078738C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				522D6BF52449CF410078738C /* Extension.swift */,
-				522D6BF62449CF410078738C /* ImageViewExtension.swift */,
+				76AE04A52449E0AE004B905F /* UIColorExtension.swift */,
+				76AE04A32449E0AD004B905F /* UIImageViewExtension.swift */,
+				76AE04A62449E0AE004B905F /* UIViewExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				TargetAttributes = {
 					522D6BBE2449CE630078738C = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1130;
 					};
 					522D6BD22449CE6C0078738C = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -299,12 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522D6BFC2449CF420078738C /* Extension.swift in Sources */,
+				76AE04AB2449E0AE004B905F /* UIViewExtension.swift in Sources */,
 				522D6BFB2449CF420078738C /* DataModel.swift in Sources */,
 				522D6BFA2449CF410078738C /* Services.swift in Sources */,
 				522D6BFE2449CF420078738C /* ViewController.swift in Sources */,
-				522D6BFD2449CF420078738C /* ImageViewExtension.swift in Sources */,
+				76AE04AA2449E0AE004B905F /* UIColorExtension.swift in Sources */,
 				522D6BFF2449CF420078738C /* CustomCell.swift in Sources */,
+				76AE04A82449E0AE004B905F /* UIImageViewExtension.swift in Sources */,
 				522D6BC32449CE630078738C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelestraDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Nikhil.TelestraDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -489,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelestraDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
