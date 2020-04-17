@@ -7,3 +7,5 @@ A demo application for iOS platform.
 
 3) Swift language is used for development.
 
+4) Pull to refesh allows you get latest data.
+

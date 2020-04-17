@@ -28,6 +28,7 @@ class Services {
                     completion(results, nil)
                 } catch {
                     print(error.localizedDescription)
+                    completion(nil, error)
                 }
             }
             }.resume()

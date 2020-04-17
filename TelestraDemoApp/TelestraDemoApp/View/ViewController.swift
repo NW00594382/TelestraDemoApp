@@ -32,13 +32,13 @@ class ViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAPIData()
+        getFactsDataFromAPI()
     }
     
     
     //MARK: - Private Methods
     
-    func getAPIData() {
+    func getFactsDataFromAPI() {
         SKActivityIndicator.show()
         Services.sharedInstance.getAPIData { (data, error) in
             DispatchQueue.main.async {
@@ -47,6 +47,10 @@ class ViewController: UITableViewController {
                     self.navigationItem.title = data?.title
                     self.rowsArray = data!.rows.filter{ $0.title != nil }
                     self.tableView.reloadData()
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "Fail to load data from server. Please try after sometime.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
@@ -55,7 +59,7 @@ class ViewController: UITableViewController {
     @objc func pullToRefresh(refreshControl: UIRefreshControl) {
         rowsArray.removeAll()
         tableView.reloadData()
-        getAPIData()
+        getFactsDataFromAPI()
         refreshControl.endRefreshing()
     }
     
