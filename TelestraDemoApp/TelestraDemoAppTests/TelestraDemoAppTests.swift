@@ -2,8 +2,8 @@
 //  TelestraDemoAppTests.swift
 //  TelestraDemoAppTests
 //
-//  Created by Nikhil Wagh on 17/04/20.
-//  Copyright © 2020 Nikhil Wagh. All rights reserved.
+//  Created by Nikhil Wagh on 4/17/20.
+//  Copyright © 2020 Tech Mahindra. All rights reserved.
 //
 
 import XCTest
