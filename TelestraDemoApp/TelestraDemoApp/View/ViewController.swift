@@ -12,23 +12,13 @@ class ViewController: UITableViewController {
     
     //MARK: - Parameters
     
-    let cellIndentifier = "Cell"
-    var rowsArray : [Row]  = [Row]()
+    var viewModel: ViewControllerVM?
 
     //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-        tableView.refreshControl = refreshControl
-        tableView.register(CustomCell.self, forCellReuseIdentifier: cellIndentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = UIColor.themeColor
-        self.tableView.tableFooterView = UIView()
-        self.navigationController?.navigationBar.barTintColor = UIColor.themeColor
+        setUpInitialView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,18 +28,32 @@ class ViewController: UITableViewController {
     
     //MARK: - Private Methods
     
+    func setUpInitialView() {
+
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        tableView.register(CustomCell.self, forCellReuseIdentifier: Constant.cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = UIColor.themeColor
+        self.tableView.tableFooterView = UIView()
+        self.navigationController?.navigationBar.barTintColor = UIColor.themeColor
+    }
+
     func getFactsDataFromAPI() {
         SKActivityIndicator.show()
-        Services.sharedInstance.getAPIData { (data, error) in
+        ServiceManager.sharedInstance.getAPIData { (data, error) in
             DispatchQueue.main.async {
                 SKActivityIndicator.dismiss()
                 if data != nil {
-                    self.navigationItem.title = data?.title
-                    self.rowsArray = data!.rows.filter{ $0.title != nil }
+                    self.viewModel = ViewControllerVM(dataModel: data!)
+                    self.navigationItem.title = self.viewModel?.screenTitle
                     self.tableView.reloadData()
                 } else {
-                    let alert = UIAlertController(title: "Error", message: "Fail to load data from server. Please try after sometime.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    let alert = UIAlertController(title: Constant.errorTitle, message: error?.localizedDescription , preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: Constant.ok, style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             }
@@ -57,7 +61,7 @@ class ViewController: UITableViewController {
     }
     
     @objc func pullToRefresh(refreshControl: UIRefreshControl) {
-        rowsArray.removeAll()
+        viewModel?.rowsArray.removeAll()
         tableView.reloadData()
         getFactsDataFromAPI()
         refreshControl.endRefreshing()
@@ -67,15 +71,15 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? CustomCell else { return CustomCell() }
-        let currentLastItem = rowsArray[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellIdentifier, for: indexPath) as? CustomCell else { return CustomCell() }
+        guard let currentLastItem = viewModel?.rowsArray[indexPath.row] else { return cell }
         cell.setUpCellData(row: currentLastItem)
         cell.selectionStyle = .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowsArray.count
+        return viewModel?.rowsArray.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -15,7 +15,7 @@ class CustomCell: UITableViewCell {
     private let nameLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.titleColor
-        lbl.font = UIFont(name: "Helvetica-bold", size: 18)
+        lbl.font = UIFont(name: Constant.customFontBold, size: CGFloat(Constant.titleFontSize))
         lbl.textAlignment = .left
         return lbl
     }()
@@ -23,7 +23,7 @@ class CustomCell: UITableViewCell {
     private let descriptionLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont(name: "Helvetica", size: 15)
+        lbl.font = UIFont(name: Constant.customFont, size: CGFloat(Constant.descFontSize))
         lbl.textAlignment = .left
         lbl.lineBreakMode = NSLineBreakMode.byTruncatingTail
         lbl.numberOfLines = 0
@@ -38,18 +38,23 @@ class CustomCell: UITableViewCell {
     }()
     
     //MARK: - Initializers
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = UIColor.themeColor
         addSubview(nameLabel)
         addSubview(descriptionLabel)
         addSubview(nameImageView)
-
-        nameImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 90, height: 90, enableInsets: false)
-        nameLabel.anchor(top: topAnchor, left: nameImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: frame.size.width, height: 0, enableInsets: false)
-        descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
-        descriptionLabel.anchor(top: nameLabel.bottomAnchor, left: nameImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: frame.size.width, height: 0, enableInsets: false)
+        
+        nameImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, enableInsets: false)
+        nameImageView.anchorSize(width: CGFloat(Constant.imageViewWidth), height: CGFloat(Constant.imageViewHeight))
+        
+        nameLabel.anchor(top: topAnchor, left: nameImageView.rightAnchor, bottom: nil, right: rightAnchor, enableInsets: false)
+        nameImageView.anchorSize(width: frame.size.width, height: CGFloat(Constant.zero))
+        
+        descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: CGFloat(Constant.heightConstant)).isActive = true
+        descriptionLabel.anchor(top: nameLabel.bottomAnchor, left: nameImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, enableInsets: false)
+        descriptionLabel.anchorSize(width: frame.size.width, height: CGFloat(Constant.zero))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,11 +62,10 @@ class CustomCell: UITableViewCell {
     }
     
     //MARK: - Private methods
-
+    
     func setUpCellData(row: Row) {
         nameImageView.imageFromServerURL(row.imageHref ?? "", placeHolder: #imageLiteral(resourceName: "placeholder"))
         nameLabel.text = row.title
         descriptionLabel.text = row.description
     }
 }
-

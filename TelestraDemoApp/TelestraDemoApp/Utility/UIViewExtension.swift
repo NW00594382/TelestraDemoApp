@@ -3,7 +3,7 @@
 //  TelestraDemoApp
 //
 //  Created by Nikhil Wagh on 17/04/20.
-//  Copyright © 2020 Nikhil Wagh. All rights reserved.
+//  Copyright © 2020 Tech Mahindra. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,8 @@ import UIKit
 
 extension UIView {
     
-    func anchor (top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat, enableInsets: Bool) {
+    func anchor (top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, enableInsets: Bool) {
+        
         var topInset = CGFloat(0)
         var bottomInset = CGFloat(0)
         
@@ -24,17 +25,20 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: paddingTop+topInset).isActive = true
+            self.topAnchor.constraint(equalTo: top, constant: 10+topInset).isActive = true
         }
         if let left = left {
-            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+            self.leftAnchor.constraint(equalTo: left, constant: 10).isActive = true
         }
         if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+            rightAnchor.constraint(equalTo: right, constant: -10).isActive = true
         }
         if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom-bottomInset).isActive = true
+            bottomAnchor.constraint(equalTo: bottom, constant: -10-bottomInset).isActive = true
         }
+    }
+    
+    func anchorSize (width: CGFloat, height: CGFloat) {
         if height != 0 {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
