@@ -61,8 +61,6 @@ class ViewController: UITableViewController {
     }
     
     @objc func pullToRefresh(refreshControl: UIRefreshControl) {
-        viewModel?.rowsArray.removeAll()
-        tableView.reloadData()
         getFactsDataFromAPI()
         refreshControl.endRefreshing()
     }

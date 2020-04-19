@@ -23,6 +23,8 @@
 		76AE04BB2449E6D0004B905F /* SKActivityIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04B92449E6D0004B905F /* SKActivityIndicatorViewStyle.swift */; };
 		76AE04BC2449E6D0004B905F /* SKActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04BA2449E6D0004B905F /* SKActivityIndicatorView.swift */; };
 		76AE04BF244AD4DB004B905F /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04BE244AD4DB004B905F /* ViewControllerVM.swift */; };
+		76AE04C6244AED38004B905F /* Facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 76AE04C5244AED38004B905F /* Facts.json */; };
+		76AE04C7244AED38004B905F /* Facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 76AE04C5244AED38004B905F /* Facts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		76AE04B92449E6D0004B905F /* SKActivityIndicatorViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActivityIndicatorViewStyle.swift; sourceTree = "<group>"; };
 		76AE04BA2449E6D0004B905F /* SKActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActivityIndicatorView.swift; sourceTree = "<group>"; };
 		76AE04BE244AD4DB004B905F /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
+		76AE04C5244AED38004B905F /* Facts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Facts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 				76AE04BD244AD4B0004B905F /* ViewModel */,
 				522D6BF02449CF410078738C /* Service */,
 				522D6BF42449CF410078738C /* Utility */,
+				76AE04C4244AECFD004B905F /* Resources */,
 				522D6BC22449CE630078738C /* AppDelegate.swift */,
 				522D6BC92449CE6B0078738C /* Assets.xcassets */,
 				522D6BCB2449CE6B0078738C /* LaunchScreen.storyboard */,
@@ -190,6 +194,14 @@
 				76AE04BE244AD4DB004B905F /* ViewControllerVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		76AE04C4244AECFD004B905F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76AE04C5244AED38004B905F /* Facts.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +311,7 @@
 			files = (
 				522D6BCD2449CE6B0078738C /* LaunchScreen.storyboard in Resources */,
 				522D6BCA2449CE6B0078738C /* Assets.xcassets in Resources */,
+				76AE04C6244AED38004B905F /* Facts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AE04C7244AED38004B905F /* Facts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
