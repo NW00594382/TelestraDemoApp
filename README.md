@@ -1,4 +1,4 @@
-# TelestraDemoApp
+# TelstraDemoApp
 A demo application for iOS platform.
 
 1) MVVM architecture and Swift programming language is used for development.
