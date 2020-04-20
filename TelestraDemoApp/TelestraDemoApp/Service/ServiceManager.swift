@@ -12,7 +12,7 @@ class ServiceManager {
     
     static let sharedInstance = ServiceManager()
     
-    func getAPIData(completion: @escaping (DataModel?, Error?) -> Void) {
+    func getAPIData(completion: @escaping (FactsModel?, Error?) -> Void) {
         
         let urlString = Constant.API.factsURL
         guard let serviceURL = URL.init(string: urlString) else { return }
@@ -24,13 +24,13 @@ class ServiceManager {
                 guard let data = data else { return }
                 let jsonString = String(decoding: data, as: UTF8.self)
                 do {
-                    let results = try JSONDecoder().decode(DataModel.self, from: jsonString.data(using: .utf8)!)
+                    let results = try JSONDecoder().decode(FactsModel.self, from: jsonString.data(using: .utf8)!)
                     completion(results, nil)
                 } catch {
                     print(error.localizedDescription)
                     completion(nil, error)
                 }
             }
-            }.resume()
+        }.resume()
     }
 }

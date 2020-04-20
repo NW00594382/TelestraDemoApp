@@ -14,7 +14,7 @@ struct Constant {
         static let factsURL = "https:dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     }
     
-    static let cellIdentifier = "Cell"
+    static let cellIdentifier = "FactsCell"
     static let errorTitle = "Error"
     static let ok = "OK"
     static let customFontBold = "Helvetica-bold"
@@ -25,9 +25,5 @@ struct Constant {
     static let imageViewWidth = 90.0
     static let zero = 0.0
     static let heightConstant = 60.0
-
-
-
-
-
+    
 }

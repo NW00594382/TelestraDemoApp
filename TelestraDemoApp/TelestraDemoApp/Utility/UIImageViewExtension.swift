@@ -14,7 +14,7 @@ extension UIImageView {
     func imageFromServerURL(_ URLString: String, placeHolder: UIImage?) {
         
         let imageCache = NSCache<NSString, UIImage>()
-
+        
         self.image = #imageLiteral(resourceName: "placeholder")
         let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         if let cachedImage = imageCache.object(forKey: NSString(string: imageServerUrl)) {
