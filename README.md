@@ -5,4 +5,4 @@ A demo application for iOS platform.
 
 2) NSURL Session is used for calling API.
 
-3) Pull to refesh allows you get latest data.
+3) Pull to refresh allows you get latest data.
